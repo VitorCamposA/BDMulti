@@ -1,26 +1,41 @@
 package com.example.demo.tables;
 
 
+import jakarta.persistence.*;
 
+import java.util.Date;
+
+@Table
 public class TableCliente {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
-    private int Id;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date criadoEm;
 
-    private String criado_em;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date atualizadoEm;
 
-    private String atualizado_em;
+    private String razaoSocial;
 
-    private String razao_social;
+    private String nomeFantasia;
 
-    private String nome_fantasia;
-
-    private String data_nascimento;
+    @Temporal(TemporalType.DATE)
+    private Date dataNascimento;
 
     private String type;
 
     private String document;
 
-    private int
+    private String incricaoEstadual;
+
+    @OneToOne
+    private Long idContatoFk;
+
+    private Long idEmpresaFk;
+
+    private Long idEnderecoFk;
 
 }
