@@ -2,9 +2,12 @@ package com.example.demo.api.domain;
 
 import com.example.demo.api.domain.base.AbstractBaseId;
 import jakarta.persistence.Column;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+import java.util.Set;
 
 @Table(name = "fornecedor")
 @Data
@@ -27,5 +30,8 @@ public class Fornecedor extends AbstractBaseId {
 
     @Column(name = "id_endereco")
     private Endereco endereco;
+
+    @OneToMany(mappedBy = "fornecedor")
+    private Set<Produto> produtos;
 
 }
