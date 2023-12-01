@@ -31,4 +31,13 @@ public class Contato extends AbstractBaseId {
     @ManyToOne
     @JoinColumn(name = "id_empresa")
     private Empresa empresa;
+
+    @ManyToOne
+    @JoinColumn(name = "id_funcionario")
+    private Funcionario funcionario;
+
+    @ManyToOne
+    @JoinColumn(name = "id_fornecedor")
+    private Fornecedor fornecedor;
+
 }
