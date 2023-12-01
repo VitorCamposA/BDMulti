@@ -42,10 +42,10 @@ public class Produto extends AbstractBaseId {
 
     @ManyToOne
     @JoinColumn(name = "id_genero")
-    private Empresa empresa;
-
-    @Column(name = "id_produto_insumo_genero")
     private ProdutoInsumoGenero produtoInsumoGenero ;
+
+    @Column(name = "id_empresa")
+    private Empresa empresa;
 
 
 }
