@@ -34,4 +34,7 @@ public class Fornecedor extends AbstractBaseId {
     @OneToMany(mappedBy = "fornecedor")
     private Set<Produto> produtos;
 
+    @OneToMany(mappedBy = "fornecedor")
+    private Set<Insumo> insumos;
+
 }
