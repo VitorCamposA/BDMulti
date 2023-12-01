@@ -5,6 +5,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
@@ -23,11 +25,12 @@ public class Cidade extends AbstractBaseId {
     @Column
     private String nome;
 
+    //FK's VVV
+    @ManyToOne
+    @JoinColumn(name = "id_estado")
+    private Estado estado;
+
     @OneToMany(mappedBy = "cidade")
     private Set<Bairro> bairros;
-
-    //FK's VVV
-    @Column(name = "id_estado")
-    private Estado estado;
 
 }

@@ -5,6 +5,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -28,9 +30,11 @@ public class Endereco extends AbstractBaseId {
     private String complemento;
 
     //FK's VVV
-    @Column(name = "id_bairro")
+    @ManyToOne
+    @JoinColumn(name = "id_bairro")
     private Bairro bairro;
 
-    @Column(name = "id_tipo_endereco")
+    @ManyToOne
+    @JoinColumn(name = "id_tipo_endereco")
     private TipoEndereco tipoEndereco;
 }

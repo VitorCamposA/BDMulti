@@ -30,10 +30,11 @@ public class Contato extends AbstractBaseId {
     private String telefone;
 
     //FK's VVV
-    @Column(name = "id_empresa")
-    private Empresa empresa;
-
     @ManyToOne
     @JoinColumn(name = "id_cliente")
     private Cliente cliente;
+
+    @ManyToOne
+    @JoinColumn(name = "id_empresa")
+    private Empresa empresa;
 }

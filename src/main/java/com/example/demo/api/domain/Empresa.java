@@ -42,8 +42,8 @@ public class Empresa extends AbstractBaseId {
     private Set<Cliente> clientes;
 
     //FK's VVV
-    @Column(name = "id_contato")
-    private Contato contato;
+    @OneToMany(mappedBy = "empresa")
+    private Set<Contato> contatos;
 
     @Column(name = "id_endereco")
     private Endereco endereco;
