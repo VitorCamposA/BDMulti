@@ -2,6 +2,7 @@ package com.example.demo.api.domain;
 
 import com.example.demo.api.domain.base.AbstractBaseId;
 import com.example.demo.api.domain.enums.TipoPlanoContas;
+import jakarta.annotation.Nonnull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -21,6 +22,7 @@ public class PlanoContas extends AbstractBaseId {
     private TipoPlanoContas tipo;
 
     @Column(name = "nome_conta")
+    @Nonnull
     private String nomeConta;
 
     @Column(name = "tipo_conta")

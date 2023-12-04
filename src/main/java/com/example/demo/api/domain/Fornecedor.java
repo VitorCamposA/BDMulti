@@ -1,6 +1,7 @@
 package com.example.demo.api.domain;
 
 import com.example.demo.api.domain.base.AbstractBaseId;
+import jakarta.annotation.Nonnull;
 import jakarta.persistence.Column;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -18,9 +19,11 @@ public class Fornecedor extends AbstractBaseId {
     private String tipo;
 
     @Column(name = "razao_social")
+    @Nonnull
     private String razaoSocial;
 
     @Column(name = "nome_fantasia")
+    @Nonnull
     private String nomeFantasia;
 
     //FK VVV

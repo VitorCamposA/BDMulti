@@ -1,6 +1,7 @@
 package com.example.demo.api.domain;
 
 import com.example.demo.api.domain.base.AbstractBaseId;
+import jakarta.annotation.Nonnull;
 import jakarta.persistence.Column;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -21,9 +22,11 @@ public class Empresa extends AbstractBaseId {
     private String incricaoEstadual;
 
     @Column(name = "razao_social")
+    @Nonnull
     private String razaoSocial;
 
     @Column(name = "nome_fantasia")
+    @Nonnull
     private String nomeFantasia;
 
     @Column(name = "mascara_pl_contas")

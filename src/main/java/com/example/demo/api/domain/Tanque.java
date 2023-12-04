@@ -1,6 +1,7 @@
 package com.example.demo.api.domain;
 
 import com.example.demo.api.domain.base.AbstractBaseId;
+import jakarta.annotation.Nonnull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -12,6 +13,7 @@ import lombok.EqualsAndHashCode;
 public class Tanque extends AbstractBaseId {
 
     @Column
+    @Nonnull
     private String descricao;
 
     @Column(name = "capacidade_litros")

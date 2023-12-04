@@ -1,6 +1,7 @@
 package com.example.demo.api.domain;
 
 import com.example.demo.api.domain.base.AbstractBaseId;
+import jakarta.annotation.Nonnull;
 import jakarta.persistence.Column;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -16,6 +17,7 @@ import lombok.EqualsAndHashCode;
 public class Endereco extends AbstractBaseId {
 
     @Column
+    @Nonnull
     private String rua;
 
     @Column
@@ -23,6 +25,10 @@ public class Endereco extends AbstractBaseId {
 
     @Column
     private String complemento;
+
+    @Column(name = "codigo_postal")
+    @Nonnull
+    private String codigoPostal;
 
     //FK's VVV
     @ManyToOne

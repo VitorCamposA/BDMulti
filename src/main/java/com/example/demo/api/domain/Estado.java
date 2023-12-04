@@ -1,6 +1,7 @@
 package com.example.demo.api.domain;
 
 import com.example.demo.api.domain.base.AbstractBaseId;
+import jakarta.annotation.Nonnull;
 import jakarta.persistence.Column;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -17,6 +18,7 @@ import java.util.Set;
 public class Estado extends AbstractBaseId {
 
     @Column
+    @Nonnull
     private String nome;
 
     //FK's VVV

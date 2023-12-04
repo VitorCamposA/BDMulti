@@ -2,6 +2,7 @@ package com.example.demo.api.domain;
 
 import com.example.demo.api.domain.base.AbstractBaseId;
 import com.example.demo.api.domain.enums.UnidadeMedida;
+import jakarta.annotation.Nonnull;
 import jakarta.persistence.Column;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -15,9 +16,11 @@ import lombok.EqualsAndHashCode;
 public class Insumo extends AbstractBaseId {
 
     @Column
+    @Nonnull
     private String nome;
 
     @Column(name = "unidade_medida")
+    @Nonnull
     private UnidadeMedida unidadeMedida;
 
     @Column

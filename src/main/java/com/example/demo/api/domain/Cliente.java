@@ -3,6 +3,7 @@ package com.example.demo.api.domain;
 
 import com.example.demo.api.domain.base.AbstractBaseId;
 import com.example.demo.api.domain.enums.TipoPessoa;
+import jakarta.annotation.Nonnull;
 import jakarta.persistence.Column;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -17,19 +18,24 @@ import java.util.Set;
 @EqualsAndHashCode(callSuper = true)
 public class Cliente extends AbstractBaseId {
 
+
     @Column(name = "razao_social")
+    @Nonnull
     private String razaoSocial;
 
     @Column(name = "nome_fantasia")
+    @Nonnull
     private String nomeFantasia;
 
     @Column(name = "data_nascimento")
     private Date dataNascimento;
 
     @Column
+    @Nonnull
     private TipoPessoa type;
 
     @Column
+    @Nonnull
     private String document;
 
     @Column(name = "incricao_estadual")

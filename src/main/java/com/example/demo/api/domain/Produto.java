@@ -2,6 +2,7 @@ package com.example.demo.api.domain;
 
 import com.example.demo.api.domain.base.AbstractBaseId;
 import com.example.demo.api.domain.enums.UnidadeMedida;
+import jakarta.annotation.Nonnull;
 import jakarta.persistence.Column;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -17,15 +18,18 @@ import java.math.BigDecimal;
 public class Produto extends AbstractBaseId {
 
     @Column
+    @Nonnull
     private String nome;
 
     @Column
     private String descricao;
 
     @Column
+    @Nonnull
     private BigDecimal preco;
 
     @Column(name = "unidade_medida")
+    @Nonnull
     private UnidadeMedida unidadeMedida;
 
     //FK VVV
@@ -37,8 +41,6 @@ public class Produto extends AbstractBaseId {
     @ManyToOne
     @JoinColumn(name = "id_cst")
     private Cst cst;
-
-    @Column
 
     @ManyToOne
     @JoinColumn(name = "id_genero")

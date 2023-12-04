@@ -1,6 +1,7 @@
 package com.example.demo.api.domain;
 
 import com.example.demo.api.domain.base.AbstractBaseId;
+import jakarta.persistence.Column;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -13,6 +14,7 @@ import java.util.Set;
 @EqualsAndHashCode(callSuper = true)
 public class TipoEndereco extends AbstractBaseId {
 
+    @Column
     private String descricao;
 
 
